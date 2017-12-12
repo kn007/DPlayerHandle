@@ -1,5 +1,5 @@
 ## Description
-Easy handle DPlayer-Lite or DPlayer on WordPress. A shortcode for WordPress to using DPlayer.
+Easy handle DPlayer Lite or DPlayer on WordPress. A shortcode for WordPress to using DPlayer.
 
 Support `[video]` tag, compatible with AMP.
 
@@ -8,7 +8,7 @@ Support `[video]` tag, compatible with AMP.
 ## Requirement
 
 * WordPress
-* [DPlayer-Lite](https://github.com/kn007/DPlayer-Lite)(full support) or [DPlayer](https://github.com/MoePlayer/DPlayer)(partial support)
+* [DPlayer Lite](https://github.com/kn007/DPlayer-Lite)(full support) or [DPlayer](https://github.com/MoePlayer/DPlayer)(partial support)
 
 ## How To Using
 
@@ -42,7 +42,7 @@ DIYgod, the author of DPlayer. [Github repo](https://github.com/MoePlayer/DPlaye
 ***
 
 ## 中文说明
-轻松的在WordPress使用上DPlayer和DPlayer-Lite，短代码形式调用。
+轻松的在WordPress使用上DPlayer和DPlayer Lite，短代码形式调用。
 
 支持原生`[video]`标签，不影响AMP模式。
 
@@ -51,7 +51,7 @@ DIYgod, the author of DPlayer. [Github repo](https://github.com/MoePlayer/DPlaye
 ## 依赖组件
 
 * WordPress
-* [DPlayer-Lite](https://github.com/kn007/DPlayer-Lite)(完整支持) 或者 [DPlayer](https://github.com/MoePlayer/DPlayer)(有限功能支持)
+* [DPlayer Lite](https://github.com/kn007/DPlayer-Lite)(完整支持) 或者 [DPlayer](https://github.com/MoePlayer/DPlayer)(有限功能支持)
 
 ## 如何使用
 
