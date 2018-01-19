@@ -19,6 +19,7 @@ class DPlayerHandle {
 	protected $hls_enable = 0;
 	protected $flv_enable = 0;
 	protected $dash_enable = 0;
+	protected $webtorrent_enable = 0;
 
 	public function init() {
 		add_shortcode( 'dplayer', array( $this, 'dplayer_shortcode' ) );
@@ -27,6 +28,7 @@ class DPlayerHandle {
 		wp_register_script( 'hlsjs', 'https://unpkg.com/hls.js/dist/hls.min.js', array(), "0.8.8", true );
 		wp_register_script( 'flvjs', 'https://unpkg.com/flv.js/dist/flv.min.js', array(), "1.3.3", true );
 		wp_register_script( 'dashjs', 'https://cdn.jsdelivr.net/npm/dashjs/dist/dash.all.min.js', array(), "2.6.4", true );
+		wp_register_script( 'webtorrent', 'https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js', array(), "0.98.20", true );
 		wp_register_script( 'dplayer', 'https://unpkg.com/dplayer', array(), "1.17.1", true );
 	}
 
@@ -44,6 +46,10 @@ class DPlayerHandle {
 			case 'dashjs':
 				wp_enqueue_script( 'dashjs' );
 				$this->dash_enable++;
+				break;
+			case 'webtorrent':
+				wp_enqueue_script( 'webtorrent' );
+				$this->webtorrent_enable++;
 				break;
 		}
 		wp_enqueue_script( 'dplayer' );
@@ -83,6 +89,7 @@ class DPlayerHandle {
 		( 0 === $this->hls_enable ) && ( $atts['type'] == 'hls' || preg_match( "/\.(m3u8)($|\?|\#)/", strtolower( $atts['src'] ) ) ) && $this->dplayer_extension( 'hlsjs' );
 		( 0 === $this->flv_enable ) && ( $atts['type'] == 'flv' || preg_match( "/\.(flv)($|\?|\#)/", strtolower( $atts['src'] ) ) ) && $this->dplayer_extension( 'flvjs' );
 		( 0 === $this->dash_enable ) && ( $atts['type'] == 'dash' || preg_match( "/\.(mpd)($|\?|\#)/", strtolower( $atts['src'] ) ) ) && $this->dplayer_extension( 'dashjs' );
+		( 0 === $this->webtorrent_enable ) && ( $atts['type'] == 'webtorrent' || preg_match( "/\.(torrent)($|\?|\#)/", strtolower( $atts['src'] ) ) || preg_match( "/(magnet:\?xt=urn:btih:)?(.{40})/", strtolower( $atts['src'] ) ) ) && $this->dplayer_extension( 'webtorrent' );
 
 		if ( empty( $atts['poster'] ) ) {
 			$output = sprintf( '<script>var dp%u=new DPlayer({container:document.getElementById("dplayer-%u"),autoplay:%b,theme:"%s",loop:%b,preload:"%s",video:{url:"%s",type:"%s"},mutex:%b,iconsColor:"%s"});</script>',
