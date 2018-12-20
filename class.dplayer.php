@@ -25,11 +25,11 @@ class DPlayerHandle {
 		add_shortcode( 'dplayer', array( $this, 'dplayer_shortcode' ) );
 		add_action( 'admin_print_footer_scripts', array( $this, 'shortcode_buttons' ), 99999 );
 		add_filter( 'wp_video_shortcode_override' , array( $this, 'override_wp_video_shortcode' ), 1, 2 );
-		wp_register_script( 'hlsjs', 'https://unpkg.com/hls.js/dist/hls.min.js', array(), "0.8.8", true );
-		wp_register_script( 'flvjs', 'https://unpkg.com/flv.js/dist/flv.min.js', array(), "1.3.3", true );
-		wp_register_script( 'dashjs', 'https://cdn.jsdelivr.net/npm/dashjs/dist/dash.all.min.js', array(), "2.6.4", true );
-		wp_register_script( 'webtorrent', 'https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js', array(), "0.98.20", true );
-		wp_register_script( 'dplayer', 'https://unpkg.com/dplayer', array(), "1.17.1", true );
+		wp_register_script( 'hlsjs', 'https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js', array(), "0.12.1", true );
+		wp_register_script( 'flvjs', 'https://cdn.jsdelivr.net/npm/flv.js/dist/flv.min.js', array(), "1.5.0", true );
+		wp_register_script( 'dashjs', 'https://cdn.jsdelivr.net/npm/dashjs/dist/dash.all.min.js', array(), "2.9.2", true );
+		wp_register_script( 'webtorrent', 'https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js', array(), "0.103.0", true );
+		wp_register_script( 'dplayer', 'https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js', array(), "1.25.0", true );
 	}
 
 	protected function dplayer_extension( $name ) {
